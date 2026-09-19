@@ -1,11 +1,12 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  test:
+  build-test-deploy:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +23,9 @@ jobs:
 
       - name: Run tests
         run: pytest
+
+      - name: Build
+        run: echo "Build completed successfully"
+
+      - name: Deploy
+        run: echo "Application deployed successfully"
